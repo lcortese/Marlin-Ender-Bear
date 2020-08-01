@@ -2048,7 +2048,7 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT       580        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       420        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16    // 0..256
     #define X_RSENSE          0.11
@@ -2064,7 +2064,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       580
+    #define Y_CURRENT       420
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -2112,7 +2112,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      650
+    #define E0_CURRENT      480
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -2850,13 +2850,13 @@
  */
 #define CUSTOM_USER_MENUS
 #if ENABLED(CUSTOM_USER_MENUS)
-  #define CUSTOM_USER_MENU_TITLE "My Options"
+  #define CUSTOM_USER_MENU_TITLE "Extra Actions"
   //#define USER_SCRIPT_DONE "M117 User Script Done"
-  #define USER_SCRIPT_AUDIBLE_FEEDBACK
-  //#define USER_SCRIPT_RETURN  // Return to status screen after a script
+  //#define USER_SCRIPT_AUDIBLE_FEEDBACK
+  #define USER_SCRIPT_RETURN  // Return to status screen after a script
 
   #define USER_DESC_1 "Calibrate Z"
-  #define USER_GCODE_1 "G28\nG0 Z230\nG1 Z244"
+  #define USER_GCODE_1 "G28\nG1 Z240\nM211 S0\nG1 Z250\nM211 S1\nG28"
 
   //#define USER_DESC_2 "Preheat for " PREHEAT_1_LABEL
   //#define USER_GCODE_2 "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND)
