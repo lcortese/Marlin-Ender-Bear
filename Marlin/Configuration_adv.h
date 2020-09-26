@@ -2064,7 +2064,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       460
+    #define Y_CURRENT       580
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -2080,7 +2080,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       920
+    #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -2112,7 +2112,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      460
+    #define E0_CURRENT      580
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -2858,14 +2858,14 @@
   #define USER_DESC_1 "Calibrate Z"
   #define USER_GCODE_1 "G28\nG1 Z240\nM211 S0\nG1 Z250\nM211 S1\nG28"
 
-  //#define USER_DESC_2 "Preheat for " PREHEAT_1_LABEL
-  //#define USER_GCODE_2 "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND)
+  #define USER_DESC_2 "Calibrate Bed PID 60c"
+  #define USER_GCODE_2 "M117 Calibrating Bed PID\nM303 C16 E-1 S60 U\nM117 Bed PID Calibration: Ready"
 
-  //#define USER_DESC_3 "Preheat for " PREHEAT_2_LABEL
-  //#define USER_GCODE_3 "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_2_TEMP_HOTEND)
+  #define USER_DESC_3 "Calibrate Bed PID 80c"
+  #define USER_GCODE_3 "M117 Calibrating Bed PID\nM303 C16 E-1 S80 U\nM117 Bed PID Calibration: Ready"
 
-  //#define USER_DESC_4 "Heat Bed/Home/Level"
-  //#define USER_GCODE_4 "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nG28\nG29"
+  #define USER_DESC_4 "Calibrate Bed PID 100c"
+  #define USER_GCODE_4 "M117 Calibrating Bed PID\nM303 C16 E-1 S100 U\nM117 Bed PID Calibration: Ready"
 
   //#define USER_DESC_5 "Home & Info"
   //#define USER_GCODE_5 "G28\nM503"

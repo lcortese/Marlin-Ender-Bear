@@ -406,7 +406,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 11
+#define TEMP_SENSOR_0 13
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -539,10 +539,10 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 95.21
-  #define DEFAULT_bedKi 17.47
-  #define DEFAULT_bedKd 345.99
-
+  #define DEFAULT_bedKp 81.77
+  #define DEFAULT_bedKi 14.37
+  #define DEFAULT_bedKd 310.26
+ 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
   //#define DEFAULT_bedKp 97.1
@@ -734,14 +734,14 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 408.8 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 408.8 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 160, 160, 5, 100 }
+#define DEFAULT_MAX_FEEDRATE          { 160, 160, 12, 100 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -769,8 +769,8 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          800    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
+#define DEFAULT_ACCELERATION          1250    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1250    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
